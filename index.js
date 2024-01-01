@@ -31,11 +31,14 @@ app.use('/api/menudata', menudata);
 app.use('/api/checkout', order);
 app.use('/api/deletedata',deletes)
 
+const connectdb=async ()=>{
+  await mongoose.connect("mongodb://127.0.0.1:27017/PizzaDatabase")
+  .then(()=>console.log("Connecting with mongodb database"))
+  .catch(err => console.error("Error connecting to MongoDB:", err.message));
+    
+}
 
-mongoose.connect("mongodb://127.0.0.1:27017/PizzaDatabase")
-.then(()=>console.log("Connecting with mongodb database"))
-.catch(err => console.error("Error connecting to MongoDB:", err.message));
-  
+
 
 app.get("*", (req, res)=> {
     
@@ -44,5 +47,8 @@ app.get("*", (req, res)=> {
 
 
 const port = process.env.PORT || 3000
-app.listen( port,()=>console.log("listening on port",port))
+connectdb().then(()=>{
+  app.listen( port,()=>console.log("listening on port",port))
 
+
+})
