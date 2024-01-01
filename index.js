@@ -32,7 +32,7 @@ app.use('/api/checkout', order);
 app.use('/api/deletedata',deletes)
 
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb://127.0.0.1:27017/PizzaDatabase")
 .then(()=>console.log("Connecting with mongodb database"))
 .catch(err => console.error("Error connecting to MongoDB:", err.message));
   
