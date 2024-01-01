@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aacc3167.css",
+    "main.js": "/static/js/main.647348f5.js",
+    "static/js/787.a63847ef.chunk.js": "/static/js/787.a63847ef.chunk.js",
+    "static/media/PizzaLoginpic.png": "/static/media/PizzaLoginpic.04632e75ae36150531f3.png",
+    "static/media/success.png": "/static/media/success.3c94510ee99e43142527.png",
+    "static/media/pizzahut logo.png": "/static/media/pizzahut logo.68e04bfbc7e4e904e309.png",
+    "index.html": "/index.html",
+    "main.aacc3167.css.map": "/static/css/main.aacc3167.css.map",
+    "main.647348f5.js.map": "/static/js/main.647348f5.js.map",
+    "787.a63847ef.chunk.js.map": "/static/js/787.a63847ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aacc3167.css",
+    "static/js/main.647348f5.js"
+  ]
+}
