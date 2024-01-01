@@ -2,15 +2,13 @@ const mongoose=require("mongoose");
 const express = require('express');
 const router = express.Router();
 const {Menudata}=require("../models/menudata")
-const {auth}=require("../middleware/auth")
+//const {auth}=require("../middleware/auth")
 
 router.get("/",async (req,res)=>{
 
 
-const menu=await Menudata
-.find()
+const menu=await Menudata.find()
 res.send(menu)
-
 })
 
 

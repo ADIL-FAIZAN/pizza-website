@@ -12,6 +12,7 @@ const deletes =require("./routes/deletedata")
 const cors = require('cors');
 const { required } = require('joi');
 const app=express();
+require('dotenv').config();
 
 const path=require('path')
 
@@ -31,11 +32,11 @@ app.use('/api/menudata', menudata);
 app.use('/api/checkout', order);
 app.use('/api/deletedata',deletes)
 
+
 const connectdb=async ()=>{
-  await mongoose.connect("mongodb://127.0.0.1:27017/PizzaDatabase")
+ await  mongoose.connect(process.env.MONGO_URL)
   .then(()=>console.log("Connecting with mongodb database"))
   .catch(err => console.error("Error connecting to MongoDB:", err.message));
-    
 }
 
 
@@ -49,7 +50,6 @@ app.get("*", (req, res)=> {
 
 const port = process.env.PORT || 3000
 connectdb().then(()=>{
-  app.listen( port,()=>console.log("listening on port",port))
-
-
+app.listen( port,()=>console.log("listening on port",port))
 })
+

@@ -11,7 +11,7 @@ router.post("/", async(req,res)=>{
 const data=await Menudata.findByIdAndDelete({_id:req.body.id})
 res.send(data)
 
-
+console.log(data)
 
 
 })
